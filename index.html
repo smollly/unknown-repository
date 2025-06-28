@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Congrats!</title>
+  <style>
+    body {
+      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+    h1 {
+      font-size: 2em;
+      color: #333;
+    }
+    #countdown {
+      font-size: 3em;
+      color: #ff5555;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 Congrats on solving my little puzzle 🎉</h1>
+  <p>Reward arriving in...</p>
+  <div id="countdown">5</div>
+
+  <script>
+    let count = 5;
+    const countdownElem = document.getElementById('countdown');
+    const timer = setInterval(() => {
+      count--;
+      countdownElem.textContent = count;
+      if (count === 0) {
+        clearInterval(timer);
+        window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
