@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Congrats!</title>
   <style>
     body {
@@ -19,6 +19,9 @@
       color: #ff5555;
       margin-top: 20px;
     }
+    #video-container {
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
@@ -26,15 +29,26 @@
   <p>Reward arriving in...</p>
   <div id="countdown">5</div>
 
+  <div id="video-container" style="display:none;">
+    <iframe width="560" height="315"
+      src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&loop=1&playlist=dQw4w9WgXcQ"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+  </div>
+
   <script>
     let count = 5;
     const countdownElem = document.getElementById('countdown');
+    const videoContainer = document.getElementById('video-container');
     const timer = setInterval(() => {
       count--;
       countdownElem.textContent = count;
       if (count === 0) {
         clearInterval(timer);
-        window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+        countdownElem.style.display = 'none';
+        videoContainer.style.display = 'block';
       }
     }, 1000);
   </script>
